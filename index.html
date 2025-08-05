@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nihal Gupta</title>
+
+
+  <style>
+    body {
+      background: #d6e1f4;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .container {
+      max-width: 730px;
+      margin: 24px auto 0;
+      background: #f2f5fb;
+      border-radius: 12px;
+      box-shadow: 0 3px 18px #aec6e7;
+      padding: 22px 42px 30px 42px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .header-logo {
+      background: purple;
+      color:#ffee8c;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 74px;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      letter-spacing: .5px;
+      margin-right: 18px;
+    }
+    .header-title {
+      font-size: 2rem;
+      color: blue;
+      font-family: serif;
+      margin: 0;
+    }
+    .header-desc {
+      margin: 0 0 18px 92px;
+      color: green;
+      font-size: .99em;
+    }
+    h3 {
+      margin: 30px 0 10px 0;
+      font-size: 1.18em;
+      font-weight: 600;
+      color: #173c95;
+    }
+    label {
+      font-weight: 500;
+      font-size: 1em;
+      color: #37476a;
+      margin-bottom: 2px;
+    }
+    .required {
+      color: #be1d1d;
+      margin-left: 2px;
+      font-size: 1.1em;
+    }
+    /* Fields Grid */
+    .fields-row {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 14px;
+    }
+    .fields-row > .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    /* 2-column wide section for photo/parents' name */
+    .fields-row.photo-row {
+      align-items: end;
+    }
+    /* Form Inputs */
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    input[type="file"],
+    textarea {
+      font-size: 1em;
+      padding: 7px 8px;
+      border: 1px solid #b6bedb;
+      border-radius: 4px;
+      margin-top: 2px;
+      background: #fff;
+      outline: none;
+      transition: border-color .3s;
+    }
+    input[type="file"] {
+      padding: 2px;
+      font-size: 0.98em;
+      background: #f6f8fa;
+    }
+    textarea {
+      min-height: 48px;
+      resize: vertical;
+    }
+    .address-section input {
+      margin-bottom: 10px;
+    }
+    /* Gender radio */
+    .gender-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 6px 0 18px 0;
+      font-size: 1em;
+    }
+    .gender-group label {
+      margin-right: 8px;
+      font-weight: 400;
+    }
+
+    
+
+
+
+    .comments-box {
+      width: 100%;
+      min-height: 38px;
+      margin-top: 4px;
+    }
+    .submit-btn {
+      margin-top: 12px;
+      padding: 8px 34px;
+      background: #254690;
+      color: #fff;
+      font-size: 1.13em;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      letter-spacing: .5px;
+      transition: background .2s;
+    }
+    .submit-btn:hover {
+      background: green;
+    }
+    @media (max-width: 950px) {
+      .container { padding: 20px 10px 30px 10px;}
+    }
+    @media (max-width: 650px) {
+      .fields-row, .fields-row.photo-row { flex-direction: column;}
+      .header-desc { margin: 0 0 18px 0;}
+    }
+  </style>
+
+
+
+
+  <script>
+    function addRow() {
+      var table = document.getElementById('coursesTable');
+      var row = table.insertRow(-1);
+
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+
+      cell1.innerHTML = '<input type="text" placeholder="Course">';
+      cell2.innerHTML = '<input type="text" placeholder="Stream">';
+      cell3.innerHTML = '<input type="text" placeholder="Language">';
+      cell4.innerHTML = '<input type="date">';
+    }
+
+
+    function showMessage() {
+      alert("Further more information about to connect us!! 📧nihalgupta.iitp@gmail.com 📞805209139");
+    }
+  </script>
+
+
+
+</head>
+<body>
+  <div class="container">
+    <!-- Header & Logo -->
+    <div class="header">
+      <div class="header-logo"><h1>NG</h1></div>
+      <div>
+        <div class="header-title"><h2><u>Student Registration Form</u></h2></div>
+      </div>
+    </div>
+    <div class="header-desc">
+      <i>Fill out the form to apply for the training courses. You can consider your application accepted after you receive a confirmation email.</i>
+    </div>
+
+    <form autocomplete="off">
+      <!-- STUDENT INFORMATION -->
+      <h3>Student Information <span class="required">*</span></h3>
+
+      <div class="fields-row">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input id="firstName" type="text" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="middleName">Middle Name</label>
+          <input id="middleName" type="text" name="middleName">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input id="lastName" type="text" name="lastName" required>
+        </div>
+      </div>
+
+      <div class="fields-row">
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input id="dob" type="date" name="dob">
+        </div>
+        <div class="form-group">
+          <label for="studentId">Student ID</label>
+          <input id="studentId" type="text" name="studentId">
+        </div>
+      </div>
+
+      <div class="fields-row photo-row">
+        <div class="form-group">
+          <label for="rollNo">Roll Number</label>
+          <input id="rollNo" type="text" name="rollNo">
+        </div>
+        <div class="form-group" style="flex: 1.0;">
+          <label for="studentPhoto">Student Photo:</label>
+          <input id="studentPhoto" type="file" accept="image/*">
+        </div>
+      </div>
+
+      <div class="fields-row">
+        <div class="form-group">
+          <label for="fatherName">Father's Name</label>
+          <input id="fatherName" type="text" name="fatherName">
+        </div>
+        <div class="form-group">
+          <label for="motherName">Mother's Name</label>
+          <input id="motherName" type="text" name="motherName">
+        </div>
+      </div>
+
+      <!-- ADDRESS -->
+      <h3>Address</h3>
+      <div class="form-group address-section">
+        <label for="street">Street Address</label>
+        <input id="street" type="text" name="street" style="width:100%;">
+      </div>
+      <div class="fields-row">
+        <div class="form-group">
+          <label for="city">City</label>
+          <input id="city" type="text" name="city">
+        </div>
+        <div class="form-group">
+          <label for="state">State / Province</label>
+          <input id="state" type="text" name="state">
+        </div>
+      </div>
+      <div class="fields-row">
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input id="country" type="text" name="country">
+        </div>
+        <div class="form-group">
+          <label for="zip">PIN Code</label>
+          <input id="zip" type="text" name="zip">
+        </div>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <h3>Contact Information <span class="required">*</span></h3>
+      <div class="fields-row">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile No</label>
+          <input id="mobile" type="text" name="mobile">
+        </div>
+      </div>
+      <!-- GENDER -->
+      <div class="gender-group">
+        <span>Gender :</span>
+        <label><input type="radio" name="gender" value="male"> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+      </div>
+
+      <!-- COURSES -->
+      
+      <h3>Courses <span class="required">*</span></h3>
+      <button style="margin-bottom: 6px; background:#e5ebf6; color:#255c8b; font-weight:500; border:none; border radius:4px; padding:3px 14px;" type="button" onclick="addRow()">+ Add new record</button>
+      
+        
+        
+        <table id="coursesTable" border="8" bordercolor="#e0e6f6" bgcolor="#fff" width="10%">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Stream</th>
+              <th>Language</th>
+              <th>Start Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" name="course" placeholder="Course"></td>
+              <td><input type="text" name="level" placeholder="Stream"></td>
+              <td><input type="text" name="language" placeholder="Language"></td>
+              <td><input type="date" name="startDate"></td>
+            </tr>
+          </tbody>
+        </table>
+     
+      <br>
+
+      <div class="form-group">
+        <label for="comments">Comments</label>
+        <textarea id="comments" name="comments" class="comments-box"></textarea>
+      </div>
+
+      <center><button onclick="showMessage()" class="submit-btn" type="submit">Submit</button></center>
+    </form>
+  </div>
+</body>
+</html>
